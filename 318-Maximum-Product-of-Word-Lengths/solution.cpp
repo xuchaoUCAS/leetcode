@@ -1,5 +1,15 @@
 class Solution {
 public:
+    bool hasSame(string s, string t){
+        int hashTable[26] = {0};
+        for(auto c : s)
+            ++hashTable[c - 'a'];
+        for(auto c : t)
+            if(hashTable[c - 'a'])
+                return true;
+        return false;
+    }
+    
     int maxProduct(vector<string>& words) {
         vector<int> flag(words.size());
         int result = 0;
