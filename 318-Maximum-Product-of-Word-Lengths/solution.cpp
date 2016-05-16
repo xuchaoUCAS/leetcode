@@ -18,7 +18,7 @@ public:
                 flag[i] |= (1 << (c - 'a'));
             for(int j = 0;j < i;++j)
                 if(!(flag[i] & flag[j]))
-                    result = max(result, int(words[i].size() * words[j].size()));
+                    result = max(result, int(words[i].length() * words[j].length()));
         }
         return result;
     }
