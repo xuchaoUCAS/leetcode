@@ -15,6 +15,6 @@ public:
             slow = tran(slow);
             fast = tran(tran(fast));
         }while(slow != fast);
-        return fast == 1;
+        return slow == 1;
     }
 };
