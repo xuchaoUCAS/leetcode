@@ -7,7 +7,7 @@ public:
                 set.erase(nums[i - k - 1]);
             if(set.find(nums[i]) != set.end())
                 return true;
-            set.insert(nums[i]);
+            set.emplace(nums[i]);
         }
         return false;
     }
