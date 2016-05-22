@@ -16,9 +16,9 @@ public:
             return isSymmetric(root->left, root->right);
     }
     bool isSymmetric(TreeNode* left, TreeNode* right){
-        if((left == right) && (left == NULL))
+        if(!left && !right)
             return true;
-        else if((left && !right) || (!left && right))
+        else if(!left || !right)
             return false;
         else if(left->val == right->val)
             return isSymmetric(left->right, right->left) && isSymmetric(left->left, right->right);
