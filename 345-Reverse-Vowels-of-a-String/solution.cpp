@@ -12,9 +12,7 @@ public:
                 ++start;
             while(start < end && !isVowel(s[end]))
                 --end;
-            char temp = s[start];
-            s[start] = s[end];
-            s[end] = temp;
+            swap(s[start], s[end]);
             ++start;
             --end;
         }
