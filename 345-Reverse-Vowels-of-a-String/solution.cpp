@@ -15,8 +15,8 @@ public:
             char temp = s[start];
             s[start] = s[end];
             s[end] = temp;
-            start++;
-            end--;
+            ++start;
+            --end;
         }
         return s;
     }
