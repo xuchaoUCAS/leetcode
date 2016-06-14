@@ -13,8 +13,8 @@ public:
             return;
         }
         if(n > 0)
-            helper(result, temp + "(", n - 1, m + 1);
+            helper(result, temp + '(', n - 1, m + 1);
         if(m > 0)
-            helper(result, temp + ")", n , m - 1);
+            helper(result, temp + ')', n , m - 1);
     }
 };
