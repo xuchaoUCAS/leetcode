@@ -17,8 +17,9 @@ public:
                 temp = temp->right;
             temp->right = root->right;
             root->right = root->left;
+            root->left = NULL;
         }
-        root->left = NULL;
+        
         root = root->right;
     }
     }
