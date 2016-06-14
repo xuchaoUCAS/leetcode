@@ -16,9 +16,8 @@ public:
             while(temp->right)
                 temp = temp->right;
             temp->right = root->right;
-        }
-        if(root->left)
             root->right = root->left;
+        }
         root->left = NULL;
         root = root->right;
     }
