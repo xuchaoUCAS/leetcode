@@ -1,10 +1,12 @@
 class Solution {
 public:
     string reverseString(string s) {
-        string result;
-        int len = s.length();
-        for(int i = len - 1;i >= 0;--i)
-            result += s[i];
-        return result;
+        int start = 0, end = s.length() - 1;
+        while(start < end){
+            swap(s[start], s[end]);
+            ++start;
+            --end;
+        }
+        return s;
     }
 };
