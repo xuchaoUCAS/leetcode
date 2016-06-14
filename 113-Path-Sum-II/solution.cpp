@@ -26,16 +26,12 @@ public:
                 result.push_back(temp);
             }
         }
-        if(!root->left && root->right){
-            temp.push_back(root->val);
+        temp.push_back(root->val);
+        if(!root->left && root->right)
             help(root->right, sum - root->val, temp, result);
-        }
-        else if(root->left && !root->right){
-            temp.push_back(root->val);
+        else if(root->left && !root->right)
             help(root->left, sum - root->val, temp, result);
-        }
         else{
-            temp.push_back(root->val);
             help(root->right, sum - root->val, temp, result);
             help(root->left, sum - root->val, temp, result);
         }
