@@ -22,7 +22,7 @@ public:
                     num = 0;
                     sign = 1;
                 }
-                if(c == ')' && ops.size()){
+                if(c == ')'){
                     result = ops.top() * result + nums.top();
                     ops.pop();
                     nums.pop();
