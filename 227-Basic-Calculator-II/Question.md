@@ -34,6 +34,6 @@ Special thanks to [@ts](https://leetcode.com/discuss/user/ts) for adding this pr
 
 <div>
 
-<div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
+<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton" style="display: inline; opacity: 0.0581172;">[(H) Basic Calculator](/problems/basic-calculator/) [(H) Expression Add Operators](/problems/expression-add-operators/)</span></div>
+<span class="hidebutton">[(H) Basic Calculator](/problems/basic-calculator/) [(H) Expression Add Operators](/problems/expression-add-operators/)</span></div>
