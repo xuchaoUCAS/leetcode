@@ -4,21 +4,20 @@ public:
         int len = s.length();
         if(!len)
             return s;
-        string result;
         int maxLen = 0;
-        for(int i = 0;i < s.length();++i){
+        string result;
+        for(int i = 0;i < len;++i){
             int pos = 0;
-            while((i - pos >= 0) && (i + pos < len) && s[i - pos] == s[i + pos])
+            while(i - pos >= 0 && i + pos < len && s[i - pos] == s[i + pos])
                 ++pos;
             --pos;
             if(maxLen < 2 * pos + 1){
                 maxLen = 2 * pos + 1;
                 result = s.substr(i - pos, 2 * pos + 1);
             }
-           
             
             pos = 0;
-            while((i - pos >= 0) && (i + pos + 1 < len) && s[i - pos] == s[i + pos + 1])
+            while(i - pos >= 0 && i + pos + 1 < len && s[i - pos] == s[i + pos + 1])
                 ++pos;
             --pos;
             if(maxLen < 2 * pos + 2){
