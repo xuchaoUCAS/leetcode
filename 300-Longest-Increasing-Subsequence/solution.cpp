@@ -7,11 +7,10 @@ public:
         vector<int> dp = vector<int>(len, 0);
         dp[0] = 1;
         int maxd = -1, result = dp[0];
-        for(int i = 1;i < len;++i){
+        for(int i = 0;i < len;++i){
             for(int j = 0;j < i;++j){
-                if(nums[j] < nums[i]){
+                if(nums[j] < nums[i])
                     maxd = max(maxd, dp[j]);
-                }
             }
             dp[i] = maxd > 0 ? maxd + 1 : 1;
             result = max(result, dp[i]);
