@@ -4,7 +4,7 @@
 
 Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 
-For example, this binary tree is symmetric:
+For example, this binary tree `[1,2,2,3,4,4,3]` is symmetric:
 
 <pre>    1
    / \
@@ -13,7 +13,7 @@ For example, this binary tree is symmetric:
 3  4 4  3
 </pre>
 
-But the following is not:  
+But the following `[1,2,2,null,3,null,3]` is not:  
 
 <pre>    1
    / \
@@ -25,37 +25,11 @@ But the following is not:
 **Note:**  
 Bonus points if you could solve it both recursively and iteratively.
 
-confused what `"{1,#,2,3}"` means? [> read more on how binary tree is serialized on OJ.](#)
-
-<div class="spoilers" style="display: none;">  
-**OJ's Binary Tree Serialization:**
-
-The serialization of a binary tree follows a level order traversal, where '#' signifies a path terminator where no node exists below.
-
-Here's an example:  
-
-<pre>   1
-  / \
- 2   3
-    /
-   4
-    \
-     5
-</pre>
-
-The above binary tree is serialized as `"{1,2,3,#,#,4,#,#,5}"`.</div>
-
 <div>
 
 [Subscribe](/subscribe/) to see which companies asked this question
 
 </div>
-
-<div>
-
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
-
-<span class="hidebutton">[Bloomberg](/company/bloomberg/) [LinkedIn](/company/linkedin/) [Microsoft](/company/microsoft/)</span></div>
 
 <div>
 
