@@ -10,20 +10,9 @@
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        int depth = 0;
-        helper(root, depth);
-        return depth;
-    }
-    
-    void helper(TreeNode* root,int& depth){
-        if(!root){
-            depth = 0;
-            return;
-        }
-        int l,r;
-        helper(root->left, l);
-        helper(root->right, r);
-        depth = l > r ? l : r;
-        ++depth;
+        if(!root)
+            return 0;
+        else
+            return max(maxDepth(root->left), maxDepth(root->right)) + 1;
     }
 };
