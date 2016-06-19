@@ -4,8 +4,8 @@ public:
         if(numRows <= 1)
             return s;
         int len = s.length();
+        int row = 0,direc = 1;
         string *result = new string[numRows];
-        int row = 0, direc = 1;
         for(int i = 0;i < len;++i){
             result[row].push_back(s[i]);
             if(row == 0)
