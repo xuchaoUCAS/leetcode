@@ -9,20 +9,19 @@
  */
 class Solution {
 public:
+    bool isSym(TreeNode* left,TreeNode* right){
+        if(!left && !right)
+            return true;
+        if(!left || !right)
+            return false;
+        if(left->val == right->val)
+            return isSym(left->right, right->left) && isSym(left->left, right->right);
+        return false;
+    }
+    
     bool isSymmetric(TreeNode* root) {
         if(!root)
             return true;
-        else
-            return isSymmetric(root->left, root->right);
-    }
-    bool isSymmetric(TreeNode* left, TreeNode* right){
-        if(!left && !right)
-            return true;
-        else if(!left || !right)
-            return false;
-        else if(left->val == right->val)
-            return isSymmetric(left->right, right->left) && isSymmetric(left->left, right->right);
-        else
-            return false;
+        return isSym(root->left, root->right);
     }
 };
