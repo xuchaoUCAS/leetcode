@@ -10,7 +10,7 @@ public:
             result[row].push_back(s[i]);
             if(row == 0)
                 direc = 1;
-            else if(row == numRows - 1)
+            if(row == numRows - 1)
                 direc = -1;
             row += direc;
         }
