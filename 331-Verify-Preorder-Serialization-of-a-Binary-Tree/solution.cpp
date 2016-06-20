@@ -1,30 +1,26 @@
 class Solution {
 public:
     bool isValidSerialization(string preorder) {
-        int nodeCnt=0,nullCnt=0;
-        vector<string> v=splitStr(preorder,',');
-        for(int i = 0; i<v.size(); i++){
-            if(v[i]=="#") ++nullCnt;
-            else ++nodeCnt;
-            if(nullCnt>=nodeCnt+1 && i!=v.size()-1) return false;
-        }
-        return nullCnt==nodeCnt+1;
-    }
-
-    vector<string> splitStr(string str, char delimiter){
-        vector<string> r;
-        string tmpstr;
-        while (!str.empty()){
-            int ind = str.find_first_of(delimiter);
-            if (ind == -1){
-                r.push_back(str);
-                str.clear();
+        bool num;
+        preorder.push_back(',');
+        int nullC = 0, nodesC = 0;
+        for(int i = 0;i < preorder.length();++i){
+            char c = preorder[i];
+            if(c == '#'){
+                nullC++;
+                num = false;
             }
-            else{
-                r.push_back(str.substr(0, ind));
-                str = str.substr(ind + 1, str.size() - ind - 1);
+            else if(c == ','){
+                if(num){
+                    nodesC++;
+                }
+                num = false;
             }
+            else
+                num = true;
+            if(nullC >= nodesC + 1 && i != preorder.length() - 2 && i != preorder.length() - 1)
+                return false;
         }
-        return r;
+        return nullC == nodesC + 1;
     }
 };
