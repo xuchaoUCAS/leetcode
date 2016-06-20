@@ -5,7 +5,7 @@ public:
         string result;
         for(auto n : nums)
             result += to_string(n);
-        while(result[0]=='0' && result.length()>1)
+        while(result[0] == '0' && result.length() > 1)
             result.erase(0,1);
         return result;
     }
