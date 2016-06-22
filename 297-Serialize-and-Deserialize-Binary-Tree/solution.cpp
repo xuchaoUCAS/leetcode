@@ -59,8 +59,6 @@ private:
                 ss >> left;
                 ss >> right;
                 left == "#" ? temp->left = NULL : temp->left = new TreeNode(stoi(left));
-                
-                
                 right == "#" ? temp->right = NULL : temp->right = new TreeNode(stoi(right));
                 q.push(temp->left);
                 q.push(temp->right);
