@@ -47,8 +47,8 @@ public:
                 string left, right;
                 ss >> left;
                 ss >> right;
-                left == "#" ? temp->left = NULL : temp->left = new TreeNode(stoi(left));
-                right == "#" ? temp->right = NULL : temp->right = new TreeNode(stoi(right));
+                temp->left = left == "#" ? NULL : new TreeNode(stoi(left));
+                temp->right = right == "#" ? NULL : new TreeNode(stoi(right));
                 q.push(temp->left);
                 q.push(temp->right);
             }
