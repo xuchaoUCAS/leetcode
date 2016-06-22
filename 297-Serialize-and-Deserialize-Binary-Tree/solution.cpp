@@ -13,7 +13,7 @@ public:
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
         stringstream ss;
-        ser(root, ss);
+        serialize(root, ss);
         return ss.str();
     }
 
@@ -28,7 +28,7 @@ public:
         return deserialize(ss, root);
     }
 private:
-    void ser(TreeNode* root, stringstream& ss){
+    void serialize(TreeNode* root, stringstream& ss){
         queue<TreeNode*> q;
         q.push(root);
         if(!root){
