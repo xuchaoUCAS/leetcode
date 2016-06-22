@@ -1,7 +1,7 @@
 class Solution {
 public:
     string getPermutation(int n, int k) {
-        int fac[9] = {1};
+        int fac[10] = {1};
         for(int i = 1;i <= 9;++i){
             fac[i] = fac[i - 1] * i; 
         }
