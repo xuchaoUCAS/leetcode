@@ -8,11 +8,12 @@ public:
         
         string num = "123456789";
         string result;
+        k--;
         while(n > 0){
-            int temp = (k - 1) / fac[n - 1];
+            int temp = k / fac[n - 1];
             result += num[temp];
             num.erase(num.begin() + temp);
-            k = k - temp * fac[n - 1];
+            k = k % fac[n - 1];
             n--;
         }
         return result;
