@@ -23,8 +23,8 @@ public:
             if(temp){
                 q.push(temp->left);
                 q.push(temp->right);
-                temp->left ? result += to_string(temp->left->val) + " " : result += "# ";
-                temp->right ? result += to_string(temp->right->val) + " " : result += "# ";
+                result += temp->left ? to_string(temp->left->val) + " " : "# ";
+                result += temp->right ? to_string(temp->right->val) + " " : "# ";
             }
             q.pop();
         }
