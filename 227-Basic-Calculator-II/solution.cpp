@@ -8,7 +8,7 @@ public:
         if (op == '+' || op == '-') {
             total += term;
             in >> term;
-            term *= 44 - op;
+            term *= op == '+' ? 1 : -1;
         } else {
             in >> n;
             if (op == '*')
