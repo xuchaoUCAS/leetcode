@@ -12,9 +12,29 @@ public:
 
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
-        stringstream ss;
-        serialize(root, ss);
-        return ss.str();
+        if(!root)
+            return "# ";
+        string ans;
+        queue<TreeNode*> q;
+        q.push(root);
+        ans += to_string(root->val) + " ";
+        while(!q.empty()){
+            TreeNode* temp = q.front();
+            if(temp->left){
+                ans += to_string(temp->left->val) + " ";
+                q.push(temp->left);
+            }
+            else
+                ans += "# ";
+            if(temp->right){
+                ans += to_string(temp->right->val) + " ";
+                q.push(temp->right);
+            }
+            else
+                ans += "# ";
+            q.pop();
+        }
+        return ans;
     }
 
     // Decodes your encoded data to tree.
@@ -25,50 +45,30 @@ public:
         if(s == "#")
             return NULL;
         TreeNode* root = new TreeNode(stoi(s));
-        return deserialize(ss, root);
-    }
-private:
-    void serialize(TreeNode* root, stringstream& ss){
-        queue<TreeNode*> q;
-        q.push(root);
-        if(!root){
-            ss << "# ";
-            return;
-        }
-        else
-            ss << root->val << " ";
-        while(!q.empty()){
-            TreeNode* temp = q.front();
-            if(temp){
-                q.push(temp->left);
-                q.push(temp->right);
-                temp->left ? ss << temp->left->val << " " : ss << "# ";
-                temp->right ? ss << temp->right->val << " " : ss << "# "; 
-            }
-            q.pop();
-        }
-    }
-    
-    TreeNode* deserialize(stringstream& ss, TreeNode* root){
-        queue<TreeNode*> q;
-        string left,right;
+        queue<TreeNode*> q; 
         q.push(root);
         while(!q.empty()){
             TreeNode* temp = q.front();
             if(temp){
+                string left ,right;
                 ss >> left;
                 ss >> right;
-                left == "#" ? temp->left = NULL : temp->left = new TreeNode(stoi(left));
-                right == "#" ? temp->right = NULL : temp->right = new TreeNode(stoi(right));
+                if(left == "#")
+                    temp->left = NULL;
+                else{
+                    temp->left =  new TreeNode(stoi(left));
+                }
+                if(right == "#")
+                    temp->right = NULL;
+                else{
+                    temp->right = new TreeNode(stoi(right));
+                }
                 q.push(temp->left);
                 q.push(temp->right);
             }
             q.pop();
         }
-        return root;
+        return root; 
     }
-};
 
-// Your Codec object will be instantiated and called as such:
-// Codec codec;
-// codec.deserialize(codec.serialize(root));
+};
