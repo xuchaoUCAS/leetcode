@@ -12,10 +12,9 @@ public:
         ListNode fake(0), *p = &fake;
         int add = 0;
         while(l1 || l2 || add){
-            int temp = (l1 ? l1->val : 0) + (l2 ? l2->val : 0) + add;
-            add = temp / 10;
-            ListNode *node = new ListNode(temp % 10);
-            p->next = node;
+            int sum = (l1 ? l1->val : 0) + (l2 ? l2->val : 0) + add;
+            add = sum / 10;
+            p->next = new ListNode(sum % 10);
             p = p->next;
             l1 = l1 ? l1->next : l1;
             l2 = l2 ? l2->next : l2;
