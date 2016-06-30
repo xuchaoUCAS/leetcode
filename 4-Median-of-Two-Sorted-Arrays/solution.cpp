@@ -1,25 +1,26 @@
 class Solution {
-public:
-    int getkth(int s[], int m, int l[], int n, int k){
-        // let m <= n
-        if (m > n) 
-            return getkth(l, n, s, m, k);
-        if (m == 0)
-            return l[k - 1];
-        if (k == 1)
-            return min(s[0], l[0]);
-
-        int i = min(m, k / 2), j = min(n, k / 2);
-        if (s[i - 1] > l[j - 1])
-            return getkth(s, m, l + j, n - j, k - j);
-        else
-            return getkth(s + i, m - i, l, n, k - i);
-        return 0;
+private:
+    int getkth_(int nums1[], int len1, int nums2[], int len2, int k){ 
+       if (len2 == 0)
+           return nums1[k-1];
+       if(len1 == 0)
+           return nums2[k-1];
+       if(k==1)
+           return min(nums1[0], nums2[0]);
+       int i = min(len1,k/2), j = min(len2,k/2);
+       if(nums1[i-1] < nums2[j-1])
+           return getkth_(nums1+i, len1-i, nums2, len2, k-i);
+       else
+           return getkth_(nums1, len1, nums2+j, len2-j, k-j);
     }
-
-    double findMedianSortedArrays(int A[], int m, int B[], int n) {
-        int l = (m + n + 1) >> 1;
-        int r = (m + n + 2) >> 1;
-        return (getkth(A, m ,B, n, l) + getkth(A, m, B, n, r)) / 2.0;
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int len1 = nums1.size(), len2 = nums2.size();
+        int k = (len1 + len2 + 1) >> 1;
+        if((len1 + len2) & 1)
+            return getkth_(&nums1[0], len1 ,&nums2[0], len2, k); 
+        else {
+            return (getkth_(&nums1[0], len1 ,&nums2[0], len2, k) + getkth_(&nums1[0], len1 ,&nums2[0], len2, k+1)) / 2.0;
+        }   
     }
 };
