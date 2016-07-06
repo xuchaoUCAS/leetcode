@@ -4,7 +4,7 @@ public:
         if(!divisor || (dividend == INT_MIN && divisor == -1))
             return INT_MAX;
         int result = 0;
-        int sign = ((dividend < 0) ^ (divisor < 0)) ? -1 : 1;
+        bool sign = ((dividend < 0) ^ (divisor < 0)) ? 0 : 1;
         long long din = labs(dividend);
         long long dis = labs(divisor);
         
@@ -17,6 +17,6 @@ public:
             din -= temp;
             result += mul;
         }
-        return sign == 1 ? result : -result; 
+        return sign ? result : -result; 
     }
 };
