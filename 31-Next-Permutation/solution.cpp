@@ -20,6 +20,6 @@ public:
             }
         }
         swap(nums[k], nums[l]);
-        reverse(nums.begin() + k + 1, nums.end());
+        sort(nums.begin() + k + 1, nums.end());
     }
 };
