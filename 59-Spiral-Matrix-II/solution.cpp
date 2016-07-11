@@ -2,25 +2,26 @@ class Solution {
 public:
     vector<vector<int>> generateMatrix(int n) {
         vector<vector<int>> matrix(n, vector<int>(n));
-        int start = 0;
-        int number = 1;
-        while(n > start * 2){
-            int endX = n - 1 - start, endY = n - 1 - start;
+        int number = 1, start = 0;
+        while(number <= n * n){
+            int j = start;
             
-            for(int i = start;i <= endX;++i)
-                matrix[start][i] = number++;
+            while(j < n - start)
+                matrix[start][j++] = number++;
             
-            if(start < endY)
-                for(int i = start + 1;i <= endY;++i)
-                    matrix[i][endX] = number++;
-                
-            if(start < endX && start < endY)
-                for(int i = endX - 1;i >= start;--i)
-                    matrix[endY][i] = number++;
-                
-            if(start < endY - 1)
-                for(int i = endY - 1;i > start;--i)
-                    matrix[i][start] = number++;
+            j = start + 1;
+            
+            while(j < n - start)
+                matrix[j++][n - start - 1] = number++;
+            
+            j = n - start - 2;
+            while(j > start)
+                matrix[n - start - 1][j--] = number++;
+            
+            j = n -start - 1;
+            while(j > start)
+                matrix[j--][start] = number++;
+
             ++start;
         }
         return matrix;
