@@ -18,9 +18,9 @@ Your algorithm should run in _O_(_n_) time and uses constant space.
 
 <div>
 
-<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
+<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
 
-<span class="hidebutton">[Array](/tag/array/)</span></div>
+<span class="hidebutton" style="display: inline; opacity: 0.216797;">[Array](/tag/array/)</span></div>
 
 <div>
 
