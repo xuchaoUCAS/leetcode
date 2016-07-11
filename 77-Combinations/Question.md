@@ -31,6 +31,6 @@ If _n_ = 4 and _k_ = 2, a solution is:
 
 <div>
 
-<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+<div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
 
-<span class="hidebutton">[(M) Combination Sum](/problems/combination-sum/) [(M) Permutations](/problems/permutations/)</span></div>
+<span class="hidebutton" style="display: inline; opacity: 0.982279;">[(M) Combination Sum](/problems/combination-sum/) [(M) Permutations](/problems/permutations/)</span></div>
