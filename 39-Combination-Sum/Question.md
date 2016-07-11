@@ -28,18 +28,12 @@ A solution set is:
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
-
-<span class="hidebutton">[Snapchat](/company/snapchat/) [Uber](/company/uber/)</span></div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Array](/tag/array/) [Backtracking](/tag/backtracking/)</span></div>
 
 <div>
 
-<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+<div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
 
-<span class="hidebutton">[(M) Letter Combinations of a Phone Number](/problems/letter-combinations-of-a-phone-number/) [(M) Combination Sum II](/problems/combination-sum-ii/) [(M) Combinations](/problems/combinations/) [(M) Combination Sum III](/problems/combination-sum-iii/) [(M) Factor Combinations](/problems/factor-combinations/)</span></div>
+<span class="hidebutton" style="display: inline;">[(M) Letter Combinations of a Phone Number](/problems/letter-combinations-of-a-phone-number/) [(M) Combination Sum II](/problems/combination-sum-ii/) [(M) Combinations](/problems/combinations/) [(M) Combination Sum III](/problems/combination-sum-iii/) [(M) Factor Combinations](/problems/factor-combinations/)</span></div>
