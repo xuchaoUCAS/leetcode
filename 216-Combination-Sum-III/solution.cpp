@@ -10,7 +10,7 @@ public:
     void helper(int target, vector<int>& temp, vector<vector<int>>& result, int begin,int k){
         if(!target && temp.size() == k)
             result.push_back(temp);
-        for(int i = begin;i < 10;++i){
+        for(int i = begin;i < 10 && target >= i;++i){
             temp.push_back(i);
             helper(target - i, temp, result, i + 1, k);
             temp.pop_back();
