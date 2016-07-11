@@ -3,7 +3,7 @@ public:
     vector<vector<int>> generateMatrix(int n) {
         vector<vector<int>> matrix(n, vector<int>(n));
         int number = 1, start = 0;
-        while(number <= n * n){
+        while(n > start * 2){
             int j = start;
             
             while(j < n - start)
