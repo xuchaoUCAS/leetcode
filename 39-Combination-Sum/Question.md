@@ -36,4 +36,4 @@ A solution set is:
 
 <div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
 
-<span class="hidebutton" style="display: inline;">[(M) Letter Combinations of a Phone Number](/problems/letter-combinations-of-a-phone-number/) [(M) Combination Sum II](/problems/combination-sum-ii/) [(M) Combinations](/problems/combinations/) [(M) Combination Sum III](/problems/combination-sum-iii/) [(M) Factor Combinations](/problems/factor-combinations/)</span></div>
+<span class="hidebutton" style="display: inline; opacity: 0.606515;">[(M) Letter Combinations of a Phone Number](/problems/letter-combinations-of-a-phone-number/) [(M) Combination Sum II](/problems/combination-sum-ii/) [(M) Combinations](/problems/combinations/) [(M) Combination Sum III](/problems/combination-sum-iii/) [(M) Factor Combinations](/problems/factor-combinations/)</span></div>
