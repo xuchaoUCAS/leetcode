@@ -1,7 +1,7 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        int l = 0, r = nums.size() - 1;
+        int l = 0,r = nums.size() - 1;
         while(l < r){
             int mid = (l + r) / 2;
             if(nums[mid] > nums[r])
@@ -11,16 +11,16 @@ public:
         }
         
         int rindex = l;
-        l = 0; r = nums.size() - 1;
-        while(l < r){
+        l = 0, r = nums.size();
+        while(l <= r){
             int mid = (l + r) / 2;
-            int realmid = (rindex + mid) % nums.size();
-            if(nums[realmid]  == target)
+            int realmid = (mid + rindex) % nums.size();
+            if(nums[realmid] == target)
                 return realmid;
-            else if(nums[realmid] < target)
-                l = realmid + 1;
+            if(nums[realmid] > target)
+                r = mid - 1;
             else
-                r = realmid - 1;
+                l = mid + 1;
         }
         return -1;
     }
