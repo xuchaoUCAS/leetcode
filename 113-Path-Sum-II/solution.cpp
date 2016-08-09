@@ -20,20 +20,17 @@ public:
     void help(TreeNode* root, int sum, vector<int> temp, vector<vector<int>>& result){
         if(!root)
             return;
+        temp.push_back(root->val);
         if(!root->left && !root->right){
             if(root->val == sum){
-                temp.push_back(root->val);
+                //temp.push_back(root->val);
                 result.push_back(temp);
             }
         }
-        temp.push_back(root->val);
-        if(!root->left && root->right)
-            help(root->right, sum - root->val, temp, result);
-        else if(root->left && !root->right)
-            help(root->left, sum - root->val, temp, result);
         else{
             help(root->right, sum - root->val, temp, result);
             help(root->left, sum - root->val, temp, result);
         }
+        temp.pop_back();
     }
 };
