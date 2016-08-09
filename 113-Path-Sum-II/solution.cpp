@@ -31,6 +31,6 @@ public:
             help(root->right, sum - root->val, temp, result);
             help(root->left, sum - root->val, temp, result);
         }
-        temp.pop_back();
+        //temp.pop_back();
     }
 };
