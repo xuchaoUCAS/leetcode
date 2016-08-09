@@ -21,16 +21,12 @@ public:
         if(!root)
             return;
         temp.push_back(root->val);
-        if(!root->left && !root->right){
-            if(root->val == sum){
-                //temp.push_back(root->val);
-                result.push_back(temp);
-            }
+        if(!root->left && !root->right && root->val == sum){
+            result.push_back(temp);
         }
         else{
             help(root->right, sum - root->val, temp, result);
             help(root->left, sum - root->val, temp, result);
         }
-        //temp.pop_back();
     }
 };
