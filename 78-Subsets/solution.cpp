@@ -1,18 +1,18 @@
 class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
-        //sort(nums.begin(), nums.end());
-        vector<vector<int>> subs;
-        vector<int> sub;  
-        genSubsets(nums, 0, sub, subs);
-        return subs; 
+        vector<vector<int>> result;
+        vector<int> temp;
+        helper(nums, result, temp, 0);
+        return result;
     }
-    void genSubsets(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs) {
-        subs.push_back(sub);
-        for (int i = start; i < nums.size(); i++) {
-            sub.push_back(nums[i]);
-            genSubsets(nums, i + 1, sub, subs);
-            sub.pop_back();
+    
+    void helper(vector<int>& nums, vector<vector<int>>& result, vector<int>& temp, int start){
+        result.push_back(temp);
+        for(int i = start;i < nums.size();++i){
+            temp.push_back(nums[i]);
+            helper(nums, result, temp, i + 1);
+            temp.pop_back();
         }
     }
 };
