@@ -10,16 +10,14 @@
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
-        if(!root || (!root->left && !root->right))
-            return true;
-        return isValid(root->left, root->val, 0) && isValid(root->right, root->val, 1) && isValidBST(root->left) && isValidBST(root->right);
+        TreeNode* prev = NULL;
+        return validate(root, prev);
     }
-    
-    bool isValid(TreeNode* root, int val, int pan){
-        if(!root)
-            return true;
-        bool l = isValid(root->left, val, pan);
-        bool r = isValid(root->right, val, pan);
-        return l && r && (pan ? root->val > val : root->val < val);
+    bool validate(TreeNode* node, TreeNode* &prev) {
+        if (node == NULL) return true;
+        if (!validate(node->left, prev)) return false;
+        if (prev != NULL && prev->val >= node->val) return false;
+        prev = node;
+        return validate(node->right, prev);
     }
 };
