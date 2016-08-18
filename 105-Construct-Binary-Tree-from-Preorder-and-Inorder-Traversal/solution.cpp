@@ -14,7 +14,7 @@ public:
     }
     
     TreeNode* buildTree(vector<int>& pre, int ps, int pe, vector<int>& in, int is, int ie){
-        if(ps > pe)
+        if(is > ie)
             return NULL;
         TreeNode* root = new TreeNode(pre[ps]);
         
