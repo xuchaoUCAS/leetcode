@@ -27,7 +27,7 @@ public:
         }
         
         root->left = buildTree(pre, ps + 1, ps + rootIndex - is, in, is, rootIndex - 1);
-        root->right = buildTree(pre, pe - ie + rootIndex + 1, pe, in, rootIndex + 1, ie);
+        root->right = buildTree(pre, ps + rootIndex - is + 1, pe, in, rootIndex + 1, ie);
         
         return root;
     }
