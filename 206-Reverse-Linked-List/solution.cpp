@@ -11,10 +11,11 @@ public:
     ListNode* reverseList(ListNode* head) {
         if(!head || !head->next)
             return head;
-        ListNode* temp = head->next;
+        ListNode* node = head;
+        ListNode* newHead = reverseList(head->next);
+        
+        head->next->next = head;
         head->next = NULL;
-        ListNode* newHead = reverseList(temp);
-        temp->next = head;
         
         return newHead;
     }
