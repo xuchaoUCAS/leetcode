@@ -14,7 +14,6 @@ public:
             return;
         flatten(root->left);
         flatten(root->right);
-        
         TreeNode* temp = root->right;
         root->right = root->left;
         root->left = NULL;
