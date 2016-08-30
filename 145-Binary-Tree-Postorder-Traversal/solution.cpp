@@ -11,22 +11,22 @@ class Solution {
 public:
     vector<int> postorderTraversal(TreeNode* root) {
         vector<int> nodes;
-        stack<TreeNode*> toVisit;
-        TreeNode* curNode = root;
-        TreeNode* lastNode = NULL;
-        while (curNode || !toVisit.empty()) {
-            if (curNode) {
-                toVisit.push(curNode);
-                curNode = curNode -> left;
+        stack<TreeNode*> s;
+        TreeNode* curr = root;
+        TreeNode* last = NULL;
+        while (curr || !s.empty()) {
+            if (curr) {
+                s.push(curr);
+                curr = curr -> left;
             }
             else {
-                TreeNode* topNode = toVisit.top();
-                if (topNode -> right && lastNode != topNode -> right)
-                    curNode = topNode -> right;
+                TreeNode* topNode = s.top();
+                if (topNode -> right && last != topNode -> right)
+                    curr = topNode -> right;
                 else {
                     nodes.push_back(topNode -> val);
-                    lastNode = topNode;
-                    toVisit.pop();
+                    last = topNode;
+                    s.pop();
                 }
             }
         }
