@@ -10,26 +10,25 @@
 class Solution {
 public:
     vector<int> postorderTraversal(TreeNode* root) {
-        vector<int> nodes;
+        vector<int> result;
         stack<TreeNode*> s;
-        TreeNode* curr = root;
-        TreeNode* last = NULL;
-        while (curr || !s.empty()) {
-            if (curr) {
+        TreeNode* curr = root, *last = NULL;
+        while(curr || !s.empty()){
+            if(curr){
                 s.push(curr);
-                curr = curr -> left;
+                curr = curr->left;
             }
-            else {
-                TreeNode* topNode = s.top();
-                if (topNode -> right && last != topNode -> right)
-                    curr = topNode -> right;
-                else {
-                    nodes.push_back(topNode -> val);
-                    last = topNode;
+            else{
+                TreeNode* temp = s.top();
+                if(temp->right && last != temp->right)
+                    curr = temp->right;
+                else{
+                    result.push_back(temp->val);
+                    last = temp;
                     s.pop();
                 }
             }
         }
-        return nodes;
+        return result;
     }
 };
