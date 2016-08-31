@@ -10,13 +10,20 @@
 class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
+        stack<TreeNode*> s;
+        vector<int> result;
         if(!root)
             return result;
-        result.push_back(root->val);
-        preorderTraversal(root->left);
-        preorderTraversal(root->right);
+        s.push(root);
+        while(!s.empty()){
+            TreeNode* temp = s.top();
+            result.push_back(temp->val);
+            s.pop();
+            if(temp->right)
+                s.push(temp->right);
+            if(temp->left)
+                s.push(temp->left);
+        }
         return result;
     }
-private:
-   vector<int> result; 
 };
