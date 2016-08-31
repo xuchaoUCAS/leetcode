@@ -10,16 +10,21 @@
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
-        vector<int> result;
-        helper(root, result);
-        return result;
+        vector<int> nodes;
+    stack<TreeNode*> s;
+    TreeNode* curr = root;
+    while (curr || !s.empty()) {
+        if (curr) {
+            s.push(curr);
+            curr = curr -> left;
+        }
+        else {
+            curr = s.top();
+            s.pop();
+            nodes.push_back(curr -> val);
+            curr = curr -> right;
+        }
     }
-    
-    void helper(TreeNode* root,vector<int>& result){
-        if(!root)
-            return;
-        helper(root->left,result);
-        result.push_back(root->val);
-        helper(root->right,result);
+    return nodes;
     }
 };
