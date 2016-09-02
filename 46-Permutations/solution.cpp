@@ -7,7 +7,7 @@ public:
             for(int i = start;i < s.size();++i){
                 swap(s[start], s[i]);
                 per(s, start + 1, result);
-                swap(s[start], s[i]);
+                //swap(s[start], s[i]);
             }
         }
     }
