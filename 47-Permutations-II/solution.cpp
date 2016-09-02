@@ -1,20 +1,34 @@
 class Solution {
 public:
-    void recursion(vector<int> num, int i, int j, vector<vector<int> > &res) {
-        if (i == j-1) {
-            res.push_back(num);
+    bool hasSwap(vector<int>s, int start, int end){
+        while(start < end){
+            if(s[start] == s[end])
+                return false;
+            start++;
+        }
+        return true;
+    }
+
+
+    void per(vector<int> s, int start, vector<vector<int>>& result){
+        if(start == s.size()){
+            result.push_back(s);
             return;
         }
-        for (int k = i; k < j; k++) {
-            if (i != k && num[i] == num[k]) continue;
-            swap(num[i], num[k]);
-            recursion(num, i+1, j, res);
+        else{
+            for(int i = start;i < s.size();++i){
+                if(i != start && s[i] == s[start])
+                    continue;
+                swap(s[start], s[i]);
+                per(s, start + 1, result);
+                //swap(s[start], s[i]);
+            }
         }
     }
-    vector<vector<int> > permuteUnique(vector<int> &num) {
-        sort(num.begin(), num.end());
-        vector<vector<int> >res;
-        recursion(num, 0, num.size(), res);
-        return res;
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        vector<vector<int>> result;
+        per(nums, 0, result);
+        return result;
     }
 };
