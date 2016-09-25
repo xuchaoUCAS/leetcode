@@ -12,7 +12,7 @@ public:
             else if(nums[mid] < nums[r])
                 r = mid;
             else
-                r--;
+                ++l;
         }
         return nums[l];
     }
