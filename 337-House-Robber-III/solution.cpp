@@ -14,7 +14,7 @@ public:
         return max(result[0], result[1]);
     }
     vector<int> help(TreeNode* root){
-        vector<int> result(10,0);
+        vector<int> result(2,0);
         if(!root)
             return result;
         vector<int> lr = help(root->left);
