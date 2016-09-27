@@ -17,10 +17,10 @@ public:
         vector<int> result(2,0);
         if(!root)
             return result;
-        vector<int> lr = help(root->left);
-        vector<int> rr = help(root->right);
-        result[0] = max(lr[0], lr[1]) + max(rr[0], rr[1]);
-        result[1] = root->val + lr[0] + rr[0];
+        vector<int> l = help(root->left);
+        vector<int> r = help(root->right);
+        result[0] = max(l[0], l[1]) + max(r[0], r[1]);
+        result[1] = root->val + l[0] + r[0];
         return result;
     }
 };
