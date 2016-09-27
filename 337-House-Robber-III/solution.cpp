@@ -10,17 +10,16 @@
 class Solution {
 public:
     int rob(TreeNode* root) {
-        vector<int> result = help(root);
-        return max(result[0], result[1]);
+        pair<int, int> result = robb(root);
+        return max(result.first, result.second);
     }
-    vector<int> help(TreeNode* root){
-        vector<int> result(2,0);
+    pair<int, int> robb(TreeNode* root){
         if(!root)
-            return result;
-        vector<int> l = help(root->left);
-        vector<int> r = help(root->right);
-        result[0] = max(l[0], l[1]) + max(r[0], r[1]);
-        result[1] = root->val + l[0] + r[0];
-        return result;
+            return make_pair(0, 0);
+        pair<int, int> l = robb(root->left);
+        pair<int, int> r = robb(root->right);
+        int f = max(l.first, l.second) + max(r.first, r.second);
+        int s = root->val + l.first + r.first;
+        return make_pair(f, s);
     }
 };
